@@ -57,7 +57,7 @@ jobs:
         with:
           path: ./out
       - name: Set GitHub Token as Environment Variable
-        run: echo "NEXT_PUBLIC_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .env
+        run: echo "NEXT_PUBLIC_GITHUB_TOKEN=${{ secrets.NEXT_PUBLIC_GITHUB_TOKEN }}" >> .env
 
   # Deployment job
   deploy:
@@ -71,4 +71,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.NEXT_PUBLIC_GITHUB_TOKEN }}
