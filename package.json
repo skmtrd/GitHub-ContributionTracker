@@ -23,6 +23,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "dotenv": "^16.4.5",
+    "envdot": "^0.0.3",
     "graphql-request": "^7.0.1",
     "next": "14.2.3",
     "react": "^18.2.0",
