@@ -5,6 +5,7 @@ import { Inputs } from './_app';
 
 const getContributions = async (userName: string, startDate: string, endDate: string) => {
   const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
+  console.log(token)
   const endpoint = 'https://api.github.com/graphql';
   const graphQLClient = new GraphQLClient(endpoint, {
     headers: {
