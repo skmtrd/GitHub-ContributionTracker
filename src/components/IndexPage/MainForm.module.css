@@ -47,7 +47,7 @@
 }
 
 .localClass input[type='date'],
-.localClass input[type='password'] {
+.localClass input[type='text'] {
   box-sizing: border-box;
   width: 100%;
   padding: 10px;

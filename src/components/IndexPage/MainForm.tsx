@@ -3,20 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 import type { FC } from 'react';
+import { useContext } from 'react';
+import { Inputs } from '../../pages/_app';
 
 type MainFormProps = {
-  changeStartDay: (startDay: string) => void;
-  changeEndDay: (endDay: string) => void;
-  changeToken: (token: string) => void;
   toggleModal: () => void;
 };
 
-const MainForm: FC<MainFormProps> = ({
-  changeStartDay,
-  changeEndDay,
-  changeToken,
-  toggleModal,
-}) => {
+const MainForm: FC<MainFormProps> = ({ toggleModal }) => {
+  const { inputs, setInputs } = useContext(Inputs);
   return (
     <>
       <div className={styles.formBox}>
@@ -42,7 +37,7 @@ const MainForm: FC<MainFormProps> = ({
             className={styles.localClass}
             type="date"
             id="start-date"
-            onChange={(e) => changeStartDay(e.target.value)}
+            onChange={(e) => setInputs({ ...inputs, startDay: e.target.value })}
             required
           />
 
@@ -53,18 +48,18 @@ const MainForm: FC<MainFormProps> = ({
             className={styles.localClass}
             type="date"
             id="end-date"
-            onChange={(e) => changeEndDay(e.target.value)}
+            onChange={(e) => setInputs({ ...inputs, endDay: e.target.value })}
             required
           />
 
           <label className={styles.localClass} htmlFor="api-key">
-            API Key
+            UserName
           </label>
           <input
             className={styles.localClass}
-            type="password"
+            type="text"
             id="api-key"
-            onChange={(e) => changeToken(e.target.value)}
+            onChange={(e) => setInputs({ ...inputs, userName: e.target.value })}
             required
           />
 
