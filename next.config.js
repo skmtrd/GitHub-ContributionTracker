@@ -9,4 +9,7 @@ module.exports = {
   trailingSlash: true,
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  env: {
+    NEXT_PUBLIC_GITHUB_TOKEN: process.env.NEXT_PUBLIC_GITHUB_TOKEN,
+  },
 };
