@@ -54,6 +54,8 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+      - name: Set GitHub Token as Environment Variable
+        run: echo "NEXT_PUBLIC_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .env
 
   # Deployment job
   deploy:
@@ -66,3 +68,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
