@@ -1,0 +1,17 @@
+.localClass {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.localClass :nth-child(1) {
+  margin-top: 20px;
+}
+
+.localClass :nth-child(2) {
+  margin-top: -10px;
+}

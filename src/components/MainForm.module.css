@@ -1,0 +1,175 @@
+.formBox {
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
+}
+
+.icon {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 40px;
+  color: #333;
+}
+
+.formBox h1 {
+  margin-bottom: 10px;
+  font-size: 25px;
+  color: #000;
+}
+
+.formBox p {
+  margin-bottom: 15px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  color: #858585;
+}
+
+.localClass a {
+  color: #007bff;
+}
+
+.localClass a:hover {
+  text-decoration: underline;
+}
+
+.localClass label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.localClass input[type='date'],
+.localClass input[type='password'] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.localClass input[type='date']:focus,
+.localClass input[type='password']:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.localClass button {
+  width: 50%;
+  padding: 12px 20px;
+  margin-top: 25px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+  transition:
+    background-color 0.1s,
+    transform 0.3s;
+}
+
+.localClass button:hover {
+  background-color: #0056b3;
+}
+
+.localClass button:active {
+  transform: scale(0.95);
+}
+
+.modalButton {
+  width: 50%;
+  padding: 12px 20px;
+  margin-top: 18px;
+  margin-bottom: 20px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background-color: #6d6d6d;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+  transition:
+    background-color 0.1s,
+    transform 0.3s;
+}
+
+.modalButton:hover {
+  background-color: #555;
+}
+
+.modalButton:active {
+  transform: scale(0.95);
+}
+
+.explain {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.modalContent {
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  margin: 15% auto;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 30%);
+  animation: modal-open 0.4s;
+}
+
+@keyframes modal-open {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
