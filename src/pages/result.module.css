@@ -1,0 +1,55 @@
+/* result.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.chartContainer {
+  width: 80%;
+  max-width: 800px;
+  padding: 24px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+}
+
+.chartContainer h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: #333;
+}
+
+.chartContainer .loading {
+  font-size: 20px;
+  color: #666;
+}
+
+.chartContainer .chart {
+  margin-top: 24px;
+}
+
+.chartContainer .info {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.chartContainer .info p {
+  margin: 4px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.chartContainer .info strong {
+  color: #666;
+}
+
+.error {
+  margin-top: 16px;
+  font-size: 18px;
+  color: red;
+}

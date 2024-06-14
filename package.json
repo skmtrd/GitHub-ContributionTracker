@@ -27,7 +27,8 @@
     "graphql-request": "^7.0.1",
     "next": "14.2.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "recharts": "^2.12.7"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",

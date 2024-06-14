@@ -5,12 +5,14 @@ import { useState } from 'react';
 
 export const Inputs = createContext<{
   inputs: {
+    token: string;
     startDay: string;
     endDay: string;
     userName: string;
   };
   setInputs: React.Dispatch<
     React.SetStateAction<{
+      token: string;
       startDay: string;
       endDay: string;
       userName: string;
@@ -18,6 +20,7 @@ export const Inputs = createContext<{
   >;
 }>({
   inputs: {
+    token: '',
     startDay: '',
     endDay: '',
     userName: '',
@@ -27,6 +30,7 @@ export const Inputs = createContext<{
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [inputs, setInputs] = useState({
+    token: '',
     startDay: '',
     endDay: '',
     userName: '',

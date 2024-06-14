@@ -4,6 +4,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 import type { FC } from 'react';
 import { useContext } from 'react';
+import Link from 'next/link';
 import { Inputs } from '../../pages/_app';
 
 type MainFormProps = {
@@ -30,40 +31,59 @@ const MainForm: FC<MainFormProps> = ({ toggleModal }) => {
           .
         </p>
         <form id="contribution-form" className={styles.localClass}>
-          <label htmlFor="start-date" className={styles.localClass}>
-            Start Date
+          <label htmlFor="token" className={styles.localClass}>
+            API Key
           </label>
           <input
             className={styles.localClass}
-            type="date"
-            id="start-date"
-            onChange={(e) => setInputs({ ...inputs, startDay: e.target.value })}
+            type="password"
+            id="token"
+            onChange={(e) => setInputs({ ...inputs, token: e.target.value })}
             required
           />
 
-          <label className={styles.localClass} htmlFor="end-date">
-            End Date
-          </label>
-          <input
-            className={styles.localClass}
-            type="date"
-            id="end-date"
-            onChange={(e) => setInputs({ ...inputs, endDay: e.target.value })}
-            required
-          />
-
-          <label className={styles.localClass} htmlFor="api-key">
+          <label className={styles.localClass} htmlFor="user-name">
             UserName
           </label>
           <input
             className={styles.localClass}
             type="text"
-            id="api-key"
+            id="user-name"
             onChange={(e) => setInputs({ ...inputs, userName: e.target.value })}
             required
           />
 
-          <button className={styles.localClass}>Get Contributions</button>
+          <div className={styles.dateInputs}>
+            <div>
+              <label htmlFor="start-date" className={styles.localClass}>
+                Start Date
+              </label>
+              <input
+                className={styles.localClass}
+                type="date"
+                id="start-date"
+                onChange={(e) => setInputs({ ...inputs, startDay: e.target.value })}
+                required
+              />
+            </div>
+
+            <div>
+              <label className={styles.localClass} htmlFor="end-date">
+                End Date
+              </label>
+              <input
+                className={styles.localClass}
+                type="date"
+                id="end-date"
+                onChange={(e) => setInputs({ ...inputs, endDay: e.target.value })}
+                required
+              />
+            </div>
+          </div>
+
+          <Link href="/result">
+            <button className={styles.localClass}>Get Contributions</button>
+          </Link>
         </form>
         <button className={styles.modalButton} onClick={toggleModal}>
           About This Tool
