@@ -149,7 +149,6 @@ const Home = () => {
         ) : (
           <div className={styles.loading}>Loading...</div>
         )}
-        {contributions === null && <div className={styles.error}>Error loading contributions</div>}
       </div>
     </div>
   );
