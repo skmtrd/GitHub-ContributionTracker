@@ -74,6 +74,7 @@ const getContributions = async (
 const Home = () => {
   const { inputs } = useContext(Inputs);
   const [contributions, setContributions] = useState<Result[] | null>(null);
+  const [activeDaysCount, setActiveDaysCount] = useState<number | null>(null);
 
   useEffect(() => {
     if (inputs.token && inputs.userName && inputs.startDay && inputs.endDay) {
@@ -88,8 +89,11 @@ const Home = () => {
         console.log(result);
         if (result !== 'Error') {
           setContributions(result);
+          const activeDays = result.filter((day) => day.contribution > 0).length;
+          setActiveDaysCount(activeDays);
         } else {
           setContributions(null);
+          setActiveDaysCount(null);
         }
       };
 
@@ -100,7 +104,6 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <div className={styles.chartContainer}>
-        {' '}
         {inputs.userName && (
           <div className={styles.info}>
             <p>
@@ -112,27 +115,37 @@ const Home = () => {
             <p>
               <strong>To:</strong> {inputs.endDay}
             </p>
+            <p>
+              <strong>Grass:</strong> {activeDaysCount}
+            </p>
           </div>
         )}
         {contributions ? (
-          <ResponsiveContainer width="100%" height={400} className={styles.chart}>
-            <LineChart
-              data={contributions}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="day" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="contribution" stroke="#8884d8" activeDot={{ r: 8 }} />
-            </LineChart>
-          </ResponsiveContainer>
+          <>
+            <ResponsiveContainer width="100%" height={400} className={styles.chart}>
+              <LineChart
+                data={contributions}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="day" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line
+                  type="monotone"
+                  dataKey="contribution"
+                  stroke="#8884d8"
+                  activeDot={{ r: 8 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </>
         ) : (
           <div className={styles.loading}>Loading...</div>
         )}

@@ -18,12 +18,6 @@
   box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
 }
 
-.chartContainer h2 {
-  margin-bottom: 16px;
-  font-size: 24px;
-  color: #333;
-}
-
 .chartContainer .loading {
   font-size: 20px;
   color: #666;
@@ -44,7 +38,14 @@
   color: #333;
 }
 
+.chartContainer .info :nth-child(4) {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a9a00;
+}
+
 .chartContainer .info strong {
+  font-weight: normal;
   color: #666;
 }
 
