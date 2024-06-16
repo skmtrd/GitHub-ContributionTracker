@@ -75,6 +75,7 @@ const Home = () => {
   const { inputs } = useContext(Inputs);
   const [contributions, setContributions] = useState<Result[] | null>(null);
   const [activeDaysCount, setActiveDaysCount] = useState<number | null>(null);
+  const [totoalContributions, setTotalContributions] = useState<number | null>(null);
 
   useEffect(() => {
     if (inputs.token && inputs.userName && inputs.startDay && inputs.endDay) {
@@ -85,10 +86,10 @@ const Home = () => {
           inputs.startDay,
           inputs.endDay,
         );
-        console.log(inputs);
-        console.log(result);
         if (result !== 'Error') {
           setContributions(result);
+          const totalContributions = result.reduce((acc, day) => acc + day.contribution, 0);
+          setTotalContributions(totalContributions);
           const activeDays = result.filter((day) => day.contribution > 0).length;
           setActiveDaysCount(activeDays);
         } else {
@@ -114,6 +115,9 @@ const Home = () => {
             </p>
             <p>
               <strong>To:</strong> {inputs.endDay}
+            </p>
+            <p>
+              <strong>Total:</strong> {totoalContributions}
             </p>
             <p>
               <strong>Grass:</strong> {activeDaysCount}

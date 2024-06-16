@@ -36,6 +36,7 @@ const MainForm: FC<MainFormProps> = ({ toggleModal }) => {
           </label>
           <input
             className={styles.localClass}
+            value={inputs.token}
             type="password"
             id="token"
             onChange={(e) => setInputs({ ...inputs, token: e.target.value })}
@@ -47,6 +48,7 @@ const MainForm: FC<MainFormProps> = ({ toggleModal }) => {
           </label>
           <input
             className={styles.localClass}
+            value={inputs.userName}
             type="text"
             id="user-name"
             onChange={(e) => setInputs({ ...inputs, userName: e.target.value })}
@@ -60,6 +62,7 @@ const MainForm: FC<MainFormProps> = ({ toggleModal }) => {
               </label>
               <input
                 className={styles.localClass}
+                value={inputs.startDay}
                 type="date"
                 id="start-date"
                 onChange={(e) => setInputs({ ...inputs, startDay: e.target.value })}
@@ -73,6 +76,7 @@ const MainForm: FC<MainFormProps> = ({ toggleModal }) => {
               </label>
               <input
                 className={styles.localClass}
+                value={inputs.endDay}
                 type="date"
                 id="end-date"
                 onChange={(e) => setInputs({ ...inputs, endDay: e.target.value })}

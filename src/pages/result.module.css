@@ -39,6 +39,10 @@
 }
 
 .chartContainer .info :nth-child(4) {
+  font-weight: bold;
+}
+
+.chartContainer .info :nth-child(5) {
   font-size: 18px;
   font-weight: bold;
   color: #1a9a00;
